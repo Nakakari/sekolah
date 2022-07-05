@@ -8,13 +8,7 @@
             <div class="menu-title">Dashboard</div>
         </a>
     </li>
-    <li>
-        <a href="/pembelajaranku" class="parent-icon">
-            <div class="parent-icon"><i class="fadeIn animated bx bx-spreadsheet"></i>
-            </div>
-            <div class="menu-title">Pembelajaran</div>
-        </a>
-    </li>
+
     @if (Auth::user()->is_admin == 1)
         <li>
             <a href="javascript:;" class="has-arrow">
@@ -56,6 +50,14 @@
                 <div class="parent-icon"><i class="fadeIn animated bx bx-file-find"></i>
                 </div>
                 <div class="menu-title">Laporan</div>
+            </a>
+        </li>
+    @elseif (Auth::user()->is_admin == null)
+        <li>
+            <a href="/pembelajaranku" class="parent-icon">
+                <div class="parent-icon"><i class="fadeIn animated bx bx-spreadsheet"></i>
+                </div>
+                <div class="menu-title">Pembelajaran</div>
             </a>
         </li>
     @endif

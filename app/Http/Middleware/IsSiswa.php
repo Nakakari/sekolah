@@ -17,7 +17,7 @@ class IsSiswa
     public function handle(Request $request, Closure $next)
     {
         return $next($request);
-        if (auth()->user()->is_admin != 2 && auth()->user()->is_admin != 1) {
+        if (auth()->user()->is_admin == null) {
             return $next($request);
         }
 

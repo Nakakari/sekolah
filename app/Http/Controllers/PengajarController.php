@@ -37,7 +37,7 @@ class PengajarController extends Controller
         $this->validate($request, [
             'kelas' => ['required', 'string', 'max:255'],
             'mapel' => 'required',
-            'k_enrol' => 'required',
+            'k_enrol' => ['required', 'unique:trx_kelas'],
             // 'id_guru' => 'required',
             'excel_siswa' => 'required|file|mimes:xlsx,xls'
         ]);
